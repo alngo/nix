@@ -42,12 +42,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  programs.light.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alngo = {
     isNormalUser = true;
-    home = "/home/alngo";
     description = "Alex Ngo";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "video" ]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile.
@@ -67,6 +68,10 @@
   environment.shellAliases = {
     switch = "sudo nixos-rebuild switch --flake /etc/nixos#nixbook";
   };
+
+  # Security x Sway
+  security.polkit.enable = true;
+  security.pam.services.swaylock = {};
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
