@@ -1,2 +1,2 @@
-# nix
+# Nix
 Nix config
