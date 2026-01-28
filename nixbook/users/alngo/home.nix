@@ -101,5 +101,8 @@
     };
 
     programs.firefox.enable = true;
-    programs.nixvim.enable = true;
+    programs.nixvim = {
+      enable = true;
+      imports = [ ./programs/nixvim ];
+    };
 }
