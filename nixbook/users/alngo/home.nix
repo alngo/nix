@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
     wayland.windowManager.sway = {
       enable = true;
@@ -101,4 +101,5 @@
     };
 
     programs.firefox.enable = true;
+    programs.nixvim.enable = true;
 }
